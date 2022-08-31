@@ -1,0 +1,37 @@
+HTTP/1.1 200 OK
+Content-Type: text/html;charset=utf-8
+Content-Length: 854
+Expires: Tue, 01 Jan 1980 00:00:00 GMT
+Cache-Control: no-cache
+Pragma: no-cache
+Date: Sun, 30 Jan 2022 12:13:14 GMT
+Connection: keep-alive
+
+{
+    "account_name": "euro-account-name",
+    "order_reference": "T1",
+    "email": "test@test.com",
+    "customer_ip": null,
+    "customer_url": "https://www.example.com/return.html",
+    "payment_created_at": "2022-01-30T12:13:14.071Z",
+    "initial_amount": 15.34,
+    "standing_amount": 15.34,
+    "payment_reference": "payment-ref-hash",
+    "payment_link": "https://payment-link.com/smth",
+    "payment_methods":
+    [
+        {
+            "source": "card",
+            "display_name": "VISA/MasterCard",
+            "country_code": null,
+            "payment_link": "https://payment-link.com/smth",
+            "logo_url": "https://payment-link.com/card-payment-logo.svg"
+        }
+    ],
+    "api_username": "username",
+    "warnings": {},
+    "stan": null,
+    "fraud_score": null,
+    "payment_state": "initial",
+    "payment_method": null
+}

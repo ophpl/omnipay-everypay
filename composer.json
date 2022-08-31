@@ -1,0 +1,36 @@
+{
+  "name": "ophpl/omnipay-everypay",
+  "type": "library",
+  "description": "EveryPay gateway for Omnipay payment processing library",
+  "keywords": [
+    "everypay",
+    "gateway",
+    "merchant",
+    "omnipay",
+    "pay",
+    "payment",
+    "purchase"
+  ],
+  "homepage": "https://github.com/ophpl/omnipay-everypay",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Omnipay\\EveryPay\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Omnipay\\EveryPay\\": "tests/"
+    }
+  },
+  "require": {
+    "ext-json": "*",
+    "omnipay/common": "^3.2"
+  },
+  "require-dev": {
+    "omnipay/tests": "^3|^4",
+    "satooshi/php-coveralls": "1.0.0",
+    "guzzlehttp/guzzle": "^7.5.0",
+    "php-http/guzzle7-adapter": "^1"
+  }
+}
