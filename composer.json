@@ -13,6 +13,12 @@
   ],
   "homepage": "https://github.com/ophpl/omnipay-everypay",
   "license": "MIT",
+  "authors": [
+    {
+      "name": "Stanislav Prokopov",
+      "email": "stanislav.prokopov@gmail.com"
+    }
+  ],
   "autoload": {
     "psr-4": {
       "Omnipay\\EveryPay\\": "src/"
@@ -20,7 +26,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Omnipay\\EveryPay\\": "tests/"
+      "Omnipay\\EveryPay\\Tests\\": "tests/"
     }
   },
   "require": {
@@ -29,8 +35,19 @@
   },
   "require-dev": {
     "omnipay/tests": "^3|^4",
-    "satooshi/php-coveralls": "1.0.0",
     "guzzlehttp/guzzle": "^7.5.0",
-    "php-http/guzzle7-adapter": "^1"
+    "php-http/guzzle7-adapter": "^1",
+    "friendsofphp/php-cs-fixer": "^v3.0"
+  },
+  "scripts": {
+    "test": [
+      "@php -d date.timezone=UTC vendor/bin/phpunit -c phpunit.xml.dist"
+    ],
+    "lint": [
+      "vendor/bin/php-cs-fixer fix src --ansi --no-interaction --dry-run --diff --verbose"
+    ],
+    "fix": [
+      "vendor/bin/php-cs-fixer fix src"
+    ]
   }
 }

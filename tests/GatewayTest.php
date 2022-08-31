@@ -1,7 +1,8 @@
 <?php
 
-namespace Omnipay\EveryPay;
+namespace Omnipay\EveryPay\Tests;
 
+use Omnipay\EveryPay\Gateway;
 use Omnipay\Tests\GatewayTestCase;
 
 class GatewayTest extends GatewayTestCase

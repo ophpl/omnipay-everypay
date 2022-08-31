@@ -6,7 +6,6 @@ use Omnipay\Common\Exception\InvalidRequestException;
 
 class PurchaseRequest extends AbstractRequest
 {
-
     /**
      * @inheritDoc
      */
@@ -107,7 +106,7 @@ class PurchaseRequest extends AbstractRequest
      */
     protected function getAccountName($currency)
     {
-        foreach($this->getAccountNames() as $accountCurrency => $accountName) {
+        foreach ($this->getAccountNames() as $accountCurrency => $accountName) {
             if ($accountCurrency == $currency) {
                 return $accountName;
             }

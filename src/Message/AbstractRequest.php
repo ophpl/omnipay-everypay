@@ -4,7 +4,6 @@ namespace Omnipay\EveryPay\Message;
 
 abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
 {
-
     /**
      * Get API endpoint.
      *
@@ -100,7 +99,6 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
      */
     protected function getAuth()
     {
-        return base64_encode( $this->getUsername().":".$this->getSecret());
+        return base64_encode($this->getUsername().":".$this->getSecret());
     }
-
 }

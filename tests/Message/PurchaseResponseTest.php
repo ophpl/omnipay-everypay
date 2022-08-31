@@ -1,7 +1,9 @@
 <?php
 
-namespace Omnipay\EveryPay\Message;
+namespace Omnipay\EveryPay\Tests\Message;
 
+use Omnipay\EveryPay\Message\PurchaseRequest;
+use Omnipay\EveryPay\Message\PurchaseResponse;
 use Omnipay\Tests\TestCase;
 
 class PurchaseResponseTest extends TestCase
