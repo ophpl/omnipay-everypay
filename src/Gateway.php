@@ -134,5 +134,4 @@ class Gateway extends AbstractGateway
     {
         return $this->createRequest('\Omnipay\EveryPay\Message\PurchaseRequest', $parameters);
     }
-
 }
