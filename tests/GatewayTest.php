@@ -45,11 +45,4 @@ class GatewayTest extends GatewayTestCase
         $request = $this->gateway->purchase();
         $this->assertInstanceOf('Omnipay\EveryPay\Message\PurchaseRequest', $request);
     }
-
-    public function testCompletePurchase()
-    {
-        $request = $this->gateway->completePurchase();
-        $this->assertInstanceOf('Omnipay\EveryPay\Message\CompletePurchaseRequest', $request);
-    }
-
 }
