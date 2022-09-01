@@ -34,7 +34,8 @@
     "omnipay/common": "^3.2"
   },
   "require-dev": {
-    "omnipay/tests": "^3|^4",
+    "phpunit/phpunit": "^8.5|^9",
+    "omnipay/tests": "^4",
     "guzzlehttp/guzzle": "^7.5.0",
     "php-http/guzzle7-adapter": "^1",
     "friendsofphp/php-cs-fixer": "^v3.0"
