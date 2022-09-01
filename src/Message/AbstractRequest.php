@@ -71,25 +71,25 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     }
 
     /**
-     * Get merchant account names.
+     * Get merchant accounts.
      *
-     * @return array account names
+     * @return array{name: string, currency: string} accounts
      */
-    public function getAccountNames()
+    public function getAccounts()
     {
-        return $this->getParameter('accountNames');
+        return $this->getParameter('accounts');
     }
 
     /**
-     * Set merchant account names.
+     * Set merchant accounts.
      *
-     * @param array $value account names
+     * @param array{name: string, currency: string} $value accounts
      *
      * @return $this
      */
-    public function setAccountNames($value)
+    public function setAccounts($value)
     {
-        return $this->setParameter('accountNames', $value);
+        return $this->setParameter('accounts', $value);
     }
 
     /**

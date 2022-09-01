@@ -106,9 +106,9 @@ class PurchaseRequest extends AbstractRequest
      */
     protected function getAccountName($currency)
     {
-        foreach ($this->getAccountNames() as $accountCurrency => $accountName) {
-            if ($accountCurrency == $currency) {
-                return $accountName;
+        foreach ($this->getAccounts() as $account) {
+            if ($account['currency'] == $currency) {
+                return $account['name'];
             }
         }
 

@@ -32,7 +32,7 @@ class Gateway extends AbstractGateway
             'endpoint' => 'https://pay.every-pay.eu/api/v4',
             'username' => '',
             'secret'   => '',
-            'accountNames' => array(),
+            'accounts' => array(),
             'testMode' => false
         );
     }
@@ -104,25 +104,25 @@ class Gateway extends AbstractGateway
     }
 
     /**
-     * Get merchant account names.
+     * Get merchant accounts.
      *
-     * @return array account names
+     * @return array{name: string, currency: string} array of accounts
      */
-    public function getAccountNames()
+    public function getAccounts()
     {
-        return $this->getParameter('accountNames');
+        return $this->getParameter('accounts');
     }
 
     /**
-     * Set merchant account names.
+     * Set merchant accounts.
      *
-     * @param array $value account names
+     * @param array{name: string, currency: string} $value array of accounts
      *
      * @return $this
      */
-    public function setAccountNames($value)
+    public function setAccounts($value)
     {
-        return $this->setParameter('accountNames', $value);
+        return $this->setParameter('accounts', $value);
     }
 
     /**

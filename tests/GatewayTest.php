@@ -19,8 +19,11 @@ class GatewayTest extends GatewayTestCase
         $this->gateway = new Gateway($this->getHttpClient(), $this->getHttpRequest());
         $this->gateway->setUsername('merchant');
         $this->gateway->setSecret('secret');
-        $this->gateway->setAccountNames(array(
-            'EUR' => 'euro-account-name'
+        $this->gateway->setAccounts(array(
+            array(
+                'name' => 'euro-account-name',
+                'currency' => 'EUR'
+            )
         ));
         $this->gateway->setTestMode(true);
     }
@@ -30,8 +33,11 @@ class GatewayTest extends GatewayTestCase
         $this->assertSame('merchant', $this->gateway->getUsername());
         $this->assertSame('secret', $this->gateway->getSecret());
         $this->assertSame(array(
-            'EUR' => 'euro-account-name'
-        ), $this->gateway->getAccountNames());
+            array(
+                'name' => 'euro-account-name',
+                'currency' => 'EUR'
+            )
+        ), $this->gateway->getAccounts());
     }
 
     public function testPurchase()

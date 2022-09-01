@@ -19,8 +19,11 @@ class PurchaseRequestTest extends TestCase
         $this->request->initialize(array(
             'username' => 'merchant',
             'secret' => 'secret',
-            'accountNames' => array(
-                'EUR' => 'euro-account-name'
+            'accounts' => array(
+                array(
+                    'name' => 'euro-account-name',
+                    'currency' => 'EUR'
+                )
             ),
             'amount'        => 15.34,
             'currency'      => 'EUR',

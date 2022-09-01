@@ -25,12 +25,10 @@ jobs:
           coverage: pcov
           tools: composer:v2, infection
 
-      - name: Update composer
-        run: composer self-update
+      - name: Install dependencies
+        uses: php-actions/composer@v6
 
-      - name: Composer install
-        run: composer install -n
-
-      - run: vendor/bin/phpunit
+      - name: Run PHPUnit
+        run: vendor/bin/phpunit
         env:
           XDEBUG_MODE: coverage
