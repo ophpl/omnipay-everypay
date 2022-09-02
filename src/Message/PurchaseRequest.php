@@ -31,9 +31,16 @@ class PurchaseRequest extends AbstractRequest
         $request->setString('nonce', uniqid(true));
         $request->setTimestamp('timestamp', $this->getNow());
 
+        $language = $this->getLanguage();
+
+        if (!empty($language)) {
+            $request->setString('locale', $language);
+        }
+
         // Setup Fraud Prevention data
         $request->setString('customer_ip', $this->getClientIp());
 
+        // Setup optional client data
         if ($card = $this->getCard()) {
             $request->setString('email', $card->getEmail());
 
