@@ -8,15 +8,16 @@ use Omnipay\Common\Message\RedirectResponseInterface;
 class PurchaseResponse extends AbstractResponse implements RedirectResponseInterface
 {
     /**
-     * @return bool
+     * {@inheritDoc}
      */
     public function isSuccessful()
     {
+        // Return false to indicate that more actions are needed to complete the transaction.
         return false;
     }
 
     /**
-     * @return bool
+     * {@inheritDoc}
      */
     public function isRedirect()
     {
@@ -24,7 +25,7 @@ class PurchaseResponse extends AbstractResponse implements RedirectResponseInter
     }
 
     /**
-     * @return string
+     * {@inheritDoc}
      */
     public function getRedirectUrl()
     {
@@ -32,7 +33,7 @@ class PurchaseResponse extends AbstractResponse implements RedirectResponseInter
     }
 
     /**
-     * @return string
+     * {@inheritDoc}
      */
     public function getRedirectMethod()
     {
@@ -40,18 +41,10 @@ class PurchaseResponse extends AbstractResponse implements RedirectResponseInter
     }
 
     /**
-     * @return array
+     * {@inheritDoc}
      */
-    public function getRedirectData()
+    public function getTransactionReference()
     {
-        return null;
-    }
-
-    /**
-     * @return string
-     */
-    public function getSessionId()
-    {
-        return isset($this->data['sid']) ? $this->data['sid'] : null;
+        return $this->data['payment_reference'];
     }
 }

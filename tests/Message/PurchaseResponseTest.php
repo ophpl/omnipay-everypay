@@ -21,7 +21,13 @@ class PurchaseResponseTest extends TestCase
 
     public function testRedirect()
     {
-        $response = new PurchaseResponse($this->request, array('payment_link' => 'https://payment-link.com/smth'));
+        $response = new PurchaseResponse(
+            $this->request,
+            array(
+                'payment_link' => 'https://payment-link.com/smth',
+                'payment_reference' => 'payment-ref-hash',
+            )
+        );
 
         $this->assertFalse($response->isSuccessful());
         $this->assertFalse($response->isCancelled());
@@ -30,9 +36,9 @@ class PurchaseResponseTest extends TestCase
         $this->assertNull($response->getCode());
         $this->assertNull($response->getMessage());
         $this->assertNull($response->getTransactionId());
-        $this->assertNull($response->getTransactionReference());
+        $this->assertSame('payment-ref-hash', $response->getTransactionReference());
         $this->assertSame('https://payment-link.com/smth', $response->getRedirectUrl());
         $this->assertSame('GET', $response->getRedirectMethod());
-        $this->assertNull($response->getRedirectData());
+        $this->assertEmpty($response->getRedirectData());
     }
 }
