@@ -83,7 +83,7 @@ class PurchaseRequest extends AbstractRequest
             $response = json_decode($paymentResponse->getBody()->getContents(), true);
 
             if (empty($response)) {
-                throw new \Exception('request failed');
+                throw new \Exception('empty response');
             }
 
             if (!empty($response['error'])) {
@@ -92,7 +92,7 @@ class PurchaseRequest extends AbstractRequest
 
             return $this->response = new PurchaseResponse($this, $response);
         } catch (\Throwable $e) {
-            throw new InvalidRequestException('Failed to request purchase: ' . $e->getMessage(), 0, $e);
+            throw new InvalidRequestException('payment request failed', $e->getCode(), $e);
         }
     }
 
