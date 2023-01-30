@@ -31,9 +31,13 @@ class CompletePurchaseRequest extends AbstractRequest
     public function sendData($data)
     {
         try {
+            $params = array(
+                'api_username' => $this->getUsername(),
+            );
+
             $paymentResponse = $this->httpClient->request(
                 'GET',
-                sprintf("%s/payments/%s", $this->getEndpoint(), $data['payment_reference']),
+                sprintf("%s/payments/%s?%s", $this->getEndpoint(), $data['payment_reference'], http_build_query($params)),
                 [
                     'Authorization' => 'Basic '. $this->getAuth(),
                     'Content-Type' => 'application/json',
