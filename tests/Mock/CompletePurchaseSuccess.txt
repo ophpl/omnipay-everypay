@@ -1,0 +1,57 @@
+HTTP/1.1 200 OK
+Content-Type: text/html;charset=utf-8
+Content-Length: 1150
+Expires: Tue, 01 Jan 1980 00:00:00 GMT
+Cache-Control: no-cache
+Pragma: no-cache
+Date: Sun, 30 Jan 2022 12:13:14 GMT
+Connection: keep-alive
+
+{
+    "account_name": "EUR3D1",
+    "order_reference": "order-1234",
+    "email": "user@example.com",
+    "customer_ip": "127.0.0.1",
+    "customer_url": "https://demo.shop.com/cart",
+    "payment_created_at": "2020-07-14T10:25:36.073Z",
+    "initial_amount": 1.28,
+    "standing_amount": 1.28,
+    "payment_reference": "1fe1dbfc5710f3ce3b11e80f4559fd31095c6c06bd79b799bf5b92c93f1d70c4",
+    "payment_link": "https://igw-seb-demo.every-pay.com/lp/zA3k6m/fz15to",
+    "api_username": "a1",
+    "processing_error":
+    {
+        "code": null,
+        "message": null
+    },
+    "warnings":
+    {
+        "transaction_attempts_cc_number_usage_frequency":
+        [
+            "Card number has been used in transaction attempts more than maximum allowed: ''5''."
+        ],
+        "transaction_attempts_cc_holder_name_usage_frequency":
+        [
+            "Cardholder name (Every Pay) has been used in transaction attempts more than maximum allowed: ''5''."
+        ]
+    },
+    "stan": 114108,
+    "fraud_score": 1600,
+    "payment_state": "settled",
+    "payment_method": "card",
+    "cc_details":
+    {
+        "last_four_digits": "1002",
+        "month": "12",
+        "year": "2025",
+        "holder_name": "Every Pay",
+        "type": "master_card",
+        "issuer_country": "DE",
+        "issuer": "Testbank AB",
+        "cobrand": null,
+        "funding_source": "Credit",
+        "product": "GOLD",
+        "state_3ds": "attempted",
+        "authorisation_code": "01234Z"
+    }
+}
