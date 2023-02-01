@@ -4,6 +4,7 @@ namespace Omnipay\EveryPay;
 
 use Omnipay\Common\AbstractGateway;
 use Omnipay\Common\Message\AbstractRequest;
+use Omnipay\EveryPay\Message\AcceptNotification;
 use Omnipay\EveryPay\Message\PurchaseRequest;
 use Omnipay\EveryPay\Message\CompletePurchaseRequest;
 
@@ -143,5 +144,15 @@ class Gateway extends AbstractGateway
     public function completePurchase(array $parameters = array())
     {
         return $this->createRequest('\Omnipay\EveryPay\Message\CompletePurchaseRequest', $parameters);
+    }
+
+    /**
+     * @param array $parameters
+     *
+     * @return AbstractRequest|AcceptNotification
+     */
+    public function acceptNotification(array $parameters = array())
+    {
+        return $this->createRequest('\Omnipay\EveryPay\Message\AcceptNotification', $parameters);
     }
 }
